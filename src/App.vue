@@ -1,9 +1,14 @@
-<script setup></script>
+<script>
+import DefaultLayout from "./layouts/DefaultLayout.vue";
+export default {
+  components: {
+    DefaultLayout,
+  },
+};
+</script>
 
 <template>
-  <div>
+  <DefaultLayout>
     <RouterView />
-  </div>
+  </DefaultLayout>
 </template>
-
-<style scoped></style>
