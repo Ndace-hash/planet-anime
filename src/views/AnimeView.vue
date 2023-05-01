@@ -41,6 +41,7 @@
         <button
           v-for="i in episodesList"
           :key="i"
+          @click="() => getEpisodeLink(i)"
           class="w-[80px] h-[30px] border flex items-center justify-center py-3 cursor-pointer"
         >
           Ep. {{ i }}
@@ -91,10 +92,19 @@ export default {
       episodeButtons.end = endEp;
     };
 
+    const getEpisodeLink = async (episode) => {
+      const { data } = await axiosInstance.get(
+        `/${name.value}/episode?number=${episode}`
+      );
+      console.log(data);
+      window.open(data.download_link, "_blank");
+    };
+
     return {
       details,
       episodesList,
       changeList,
+      getEpisodeLink,
     };
   },
 };
