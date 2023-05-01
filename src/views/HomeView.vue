@@ -4,6 +4,7 @@
       v-for="genre in genres"
       :genre="genre.genre"
       :link="genre.link"
+      :key="genre.link"
     />
   </div>
 </template>
