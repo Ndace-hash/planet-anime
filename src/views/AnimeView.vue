@@ -1,6 +1,6 @@
 <template>
   <div class="my-4" v-if="details != null">
-    <div class="flex gap-4 items-center">
+    <div class="flex flex-col md:flex-row gap-4 items-center">
       <div class="w-1/3 shrink-0">
         <img :src="details.image" :alt="details.name" class="w-full h-full" />
       </div>
