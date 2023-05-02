@@ -14,7 +14,7 @@ export default {
     const router = useRouter();
 
     const viewAnime = () => {
-      const name = props.anime.title;
+      const name = props.anime.title || props.anime.name;
       router.push({
         name: "Anime-detail",
         params: {
