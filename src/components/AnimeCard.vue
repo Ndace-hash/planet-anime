@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-[200px] h-[100px] shrink-0 object-fit overflow-hidden flex items-center justify-center cursor-pointer hover:border-white border-2 border-transparent"
+    class="w-[200px] h-[250px] shrink-0 object-fill overflow-hidden flex items-center justify-center cursor-pointer hover:border-white border-2 border-transparent"
     @click="viewAnime"
   >
-    <img :src="anime.image" :alt="anime.title" class="w-full" />
+    <img :src="anime.image" :alt="anime.title" class="w-full h-full" />
   </div>
 </template>
 
