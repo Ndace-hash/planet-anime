@@ -16,7 +16,6 @@ export default {
     const animeList = ref([]);
     onMounted(async () => {
       const { data } = await axiosInstance.get(`/gl?link=${props.link}`);
-      console.log(data);
       animeList.value = [...data];
     });
 
