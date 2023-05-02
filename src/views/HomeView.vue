@@ -19,7 +19,7 @@ export default {
 
     onMounted(async () => {
       const { data } = await axiosInstance.get("/genres");
-      for (let index = 0; index < 5; index++) {
+      for (let index = 0; index < 15; index++) {
         genres.value.push(data[index]);
       }
     });

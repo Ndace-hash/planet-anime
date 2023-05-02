@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="font-semibold text-xl capitalize my-2">{{ genre }}</h2>
-    <div class="scroll-list w-full gap-2 h-[100px] flex overflow-x-scroll">
+    <div class="scroll-list w-full gap-2 h-max flex overflow-x-scroll">
       <AnimeCard v-for="anime in animeList" :anime="anime" :key="anime.title" />
     </div>
   </div>
