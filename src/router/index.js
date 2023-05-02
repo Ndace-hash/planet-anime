@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AnimeView from "../views/AnimeView.vue";
+import SearchResultView from "../views/SearchResultView.vue";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     name: "Anime-detail",
     path: "/:title",
     component: AnimeView,
+  },
+  {
+    name: "result",
+    path: "/result",
+    component: SearchResultView,
   },
 ];
 

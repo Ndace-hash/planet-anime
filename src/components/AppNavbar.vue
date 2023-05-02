@@ -3,7 +3,7 @@
     <div id="logo flex items-center justify-center ">
       <h1 class="text-white font-bold md:text-2xl z-50 text-xl">PlanetAnime</h1>
     </div>
-    <div
+    <!-- <div
       class="wrapper items-center md:justify-between md:flex-row w-full flex-col absolute top-0 left-0 md:flex md:static h-screen justify-center md:bg-transparent bg-black z-10"
       :class="showNav ? 'flex' : 'hidden'"
     >
@@ -32,18 +32,39 @@
       "
     >
       menu
-    </button>
+    </button> -->
+    <div class="flex overflow-hidden rounded-sm">
+      <input
+        type="text"
+        placeholder="Search for animes by name"
+        class="text-sm py-1 px-2 w-[300px] text-black"
+        v-model="searchTerm"
+      />
+      <button class="px-1 py-1 bg-red-700" @click="search">Find</button>
+    </div>
   </header>
 </template>
 
 <script>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import { ref } from "vue";
 export default {
   setup() {
+    const router = useRouter();
     const showNav = ref(false);
+    const searchTerm = ref("");
 
-    return { showNav };
+    const search = () => {
+      if (!searchTerm.value) return;
+      router.push({
+        name: "result",
+        query: {
+          keyword: searchTerm.value,
+        },
+      });
+    };
+
+    return { showNav, searchTerm, search };
   },
   components: { RouterLink },
 };
