@@ -1,6 +1,6 @@
 <template>
   <header
-    class="h-[50px] bg-black flex items-center justify-between md:gap-6 gap-4"
+    class="h-max bg-black flex flex-col md:flex-row items-center justify-between md:gap-6 gap-4 py-3"
   >
     <div id="logo flex items-center justify-center ">
       <RouterLink to="/" class="text-red-600 font-bold md:text-2xl z-50 text-xl"
@@ -41,10 +41,10 @@
       <input
         type="text"
         placeholder="Search for animes by name"
-        class="text-sm py-1 px-2 w-[300px] text-black"
+        class="text-sm py-1 px-2 w-[300px] text-black flex items-center"
         v-model="searchTerm"
       />
-      <button class="px-1 py-1 bg-red-700" @click="search">Find</button>
+      <button class="px-4 py-2 bg-red-700" @click="search">Find</button>
     </div>
   </header>
 </template>
