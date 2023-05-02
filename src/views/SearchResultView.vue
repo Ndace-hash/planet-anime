@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h2>Related to {{ $route.query.keyword }}</h2>
+    <h2 class="font-semibold capitalize">
+      Related to {{ $route.query.keyword }}
+    </h2>
     <div class="flex flex-wrap items-center justify-center gap-4">
       <AnimeCard v-for="anime in searchList" :key="anime.name" :anime="anime" />
     </div>
