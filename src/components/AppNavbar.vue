@@ -1,7 +1,11 @@
 <template>
-  <header class="h-[50px] bg-black flex items-center justify-between md:gap-6">
+  <header
+    class="h-[50px] bg-black flex items-center justify-between md:gap-6 gap-4"
+  >
     <div id="logo flex items-center justify-center ">
-      <h1 class="text-white font-bold md:text-2xl z-50 text-xl">PlanetAnime</h1>
+      <RouterLink to="/" class="text-red-600 font-bold md:text-2xl z-50 text-xl"
+        >PlanetAnime</RouterLink
+      >
     </div>
     <!-- <div
       class="wrapper items-center md:justify-between md:flex-row w-full flex-col absolute top-0 left-0 md:flex md:static h-screen justify-center md:bg-transparent bg-black z-10"
