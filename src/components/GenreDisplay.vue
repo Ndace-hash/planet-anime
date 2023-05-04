@@ -12,12 +12,12 @@ import AnimeCard from "./AnimeCard.vue";
 import { axiosInstance } from "../composables/utils/Axios";
 import { ref, onMounted } from "vue";
 export default {
-  setup(props) {
+  async setup(props) {
     const animeList = ref([]);
-    onMounted(async () => {
-      const { data } = await axiosInstance.get(`/gl?link=${props.link}`);
-      animeList.value = [...data];
-    });
+    const { data } = await axiosInstance.get(`/gl?link=${props.link}`);
+    animeList.value = [...data];
+    // onMounted(async () => {
+    // });
 
     return { animeList };
   },
