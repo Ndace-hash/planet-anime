@@ -38,20 +38,19 @@
       </div>
 
       <div class="flex flex-wrap gap-4 items-center justify-center">
-        <button
+        <EpisodeButton
           v-for="i in episodesList"
           :key="i"
-          @click="() => getEpisodeLink(i)"
-          class="w-[80px] h-[30px] border flex items-center justify-center py-3 cursor-pointer"
-        >
-          Ep. {{ i }}
-        </button>
+          :episode="i"
+          :name="name"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import EpisodeButton from "../components/EpisodeButton.vue";
 import { axiosInstance } from "../composables/utils/Axios";
 import { useRoute } from "vue-router";
 import { ref, onBeforeMount, reactive, watch } from "vue";
@@ -71,7 +70,6 @@ export default {
         if (i != 0) list.push(i);
       }
       episodesList.value = list;
-      console.log(newValue, oldValue);
     });
     onBeforeMount(async () => {
       try {
@@ -79,7 +77,6 @@ export default {
         name.value = name.value.split(" ").join("-");
         const { data } = await axiosInstance.get(`/${name.value}`);
         details.value = await data;
-        console.log(details.value);
         episodeButtons.start = details.value.availableEpisodes[0].start_episode;
         episodeButtons.end = details.value.availableEpisodes[0].end_episode;
       } catch (err) {
@@ -92,20 +89,13 @@ export default {
       episodeButtons.end = endEp;
     };
 
-    const getEpisodeLink = async (episode) => {
-      const { data } = await axiosInstance.get(
-        `/${name.value}/episode?number=${episode}`
-      );
-      console.log(data);
-      window.open(data.download_link, "_blank");
-    };
-
     return {
+      name,
       details,
       episodesList,
       changeList,
-      getEpisodeLink,
     };
   },
+  components: { EpisodeButton },
 };
 </script>
