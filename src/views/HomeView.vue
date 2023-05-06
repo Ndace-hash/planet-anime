@@ -14,6 +14,7 @@
         <GenreDisplaySkeleton />
         <GenreDisplaySkeleton />
         <GenreDisplaySkeleton />
+        <GenreDisplaySkeleton />
       </div>
     </template>
   </Suspense>
