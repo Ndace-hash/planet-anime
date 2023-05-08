@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[350px]">
+  <div class="w-full min-h-[350px]">
     <h2 class="w-24 h-4 text-xl capitalize my-2 rounded-xl"></h2>
     <div class="w-full gap-2 flex overflow-x-scroll">
       <AnimeCardSkeleton />
